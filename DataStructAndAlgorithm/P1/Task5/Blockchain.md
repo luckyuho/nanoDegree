@@ -1,9 +1,12 @@
-# Runtime Analysis
+# Task 5: Blockchain
 
-### Task 5: Blockchain
-- Worst-case time complexity is O(n).
-- The time complexity for this program is O(n) because the length of our cache array is a fixed capacity.
-  
+### Explanation of code
+The project mainly build a prototype of blockchain. We use block to save each information and use blockLinkList to connect all blocks.
+
+### Time and Space Complexity Analysis
+The time and space complexity for this program is O(n).
+
+### Result
 ```python
 # block = BlockLinkList("Hello, block chain")
 # block.print_block_chain()

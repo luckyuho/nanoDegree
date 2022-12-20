@@ -35,9 +35,7 @@ def is_user_in_group(user, group):
 
     status = False
 
-    # print(group.get_groups())
     for g in group.get_groups():
-        # print(f'now is in group {g.get_name()}')
 
         if user in g.get_users():
             print(f'user: {user} is in group {g.get_name()}')

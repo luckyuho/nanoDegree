@@ -6,7 +6,6 @@ class Node:
     def __repr__(self):
         return str(self.value)
 
-
 class LinkedList:
     def __init__(self):
         self.head = None
@@ -18,7 +17,6 @@ class LinkedList:
             out_string += str(cur_head.value) + " -> "
             cur_head = cur_head.next
         return out_string
-
 
     def append(self, value):
 
@@ -57,7 +55,6 @@ def union(llist_1, llist_2):
     output_list = sorted(output_list)
 
     return output_list
-
 
 def intersection(llist_1, llist_2):
     # Your Solution Here

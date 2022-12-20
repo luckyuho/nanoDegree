@@ -1,9 +1,12 @@
-# Runtime Analysis
+# Task 4: Active Directory
 
-### Task 4: Active Directory
-- Worst-case time complexity is O(logn).
-- The time complexity for this program is O(logn) because the length of our cache array is a fixed capacity.
-  
+### Explanation of code
+This problem ask to know the member in group, besides, the group can contain other groups. If we want to know whether this person is in this group, we need to find the member in the group and those members in the other groups which the group contains. Therefore, we use recursion to find the group and its sub groups.
+
+### Time and Space Complexity Analysis
+The time and space complexity for this program is O(n) because it will traverse all other groups belong to the group.
+
+### Result  
 ```python
 # A = Group("A")
 # B = Group("B")

@@ -1,10 +1,14 @@
-# Runtime Analysis
+# Task 1: Least Recently Used Cache
 
-### Task 1: Least Recently Used Cache
-- We give each cache a timestamp, if cache is fulfill, the earliest timestamp of cache will be replace and if there is ever using a cache, we will renew its timestamp.
-- Worst-case time complexity is O(1).
-- The time complexity for this program is O(1) because the length of our cache array is a fixed capacity.
-  
+### Explanation of code
+We give each cache a timestamp, if cache is fulfill, the earliest timestamp of cache will be replace and if there is ever using a cache, we will renew its timestamp.
+
+This problem implements the Least Recently Used (LRU) Cache with an array plus a map. Array is used to record cache value, map is used to record the position and timestamp of the cache value accordingly. Adding the map triples the space complexity but makes the time efficiency for getting operations constant.
+
+### Time and Space Complexity Analysis
+The time and space complexity for this program is O(1) because the length of our cache array is a fixed capacity.
+
+### Result
 ```python
 # our_cache.get(1)
 1
@@ -31,3 +35,5 @@
 ['A', 2, 7, 7, 5]
 {2: [1, 1670763804.605301], 5: [4, 1670763804.6053052], 6: [2, 1670763804.60531], 8: [3, 1670763804.605324], 'r': [0, 1670763804.605333]}
 ```
+### Question
+1. In fact, in your reviews, you mention you use doubly link list, I have no idea what is its benefit, is there any better way to deal with this problem?

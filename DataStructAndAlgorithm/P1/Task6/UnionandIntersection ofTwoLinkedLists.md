@@ -1,9 +1,12 @@
-# Runtime Analysis
+# Task 6: Union and Intersection of Two LinkedLists
 
-### Task 6: Union and Intersection of Two LinkedLists
-- Worst-case time complexity is O(nlogn).
-- The time complexity for this program is O(nlogn) because the length of our cache array is a fixed capacity.
-  
+### Explanation of code
+There are two cases in this project: union and intersection of two arrays. In union method, we use same dict to record data, so if data shows in dict, it means there must appear at least one array. In intersection, we use two dicts, it shows the elements exist in both of the dicts.
+
+### Time and Space Complexity Analysis
+The time and space complexity for this program is O(n*log(n)).
+
+### Result
 ```python
 # # Example case 1
 # arr1 = [3,2,4,35,6,65,6,4,3,21]
@@ -48,3 +51,6 @@ case3
 [1, 2]
 [1]
 ```
+### Question
+1. In fact, I have no idea why we use link list to deal this problem, is there any better way to deal with this problem?
+2. I think time and space complexity are the same at most time. When will it be difference?

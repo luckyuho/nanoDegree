@@ -1,9 +1,12 @@
-# Runtime Analysis
+# Task 3: Data Compression
 
-### Task 3: Data Compression
-- Worst-case time complexity is O(nlogn).
-- The time complexity for this program is O(nlogn) because the length of our cache array is a fixed capacity.
+### Explanation of code
+We use huffman to build a tree according to the frequency of occurrence. Encoding and decoding the data by the huffman tree. We use map in both encoding and decoding methods. First, traverse all elements to get the corresponding symbols and record in the map. After that, we can use the map to encode and decode tha data.
   
+### Time and Space Complexity Analysis
+The time and space complexity for this program is O(n*log(n)) because it builds a binary tree.
+
+### Result
 ```python
 # # Example
 # a_great_sentence = "The bird is the word"
@@ -73,7 +76,7 @@ The content of the encoded data is:
 
 ```
 
-### Noted
+### Question
 - I have to say, if there is no library "heapq", I really have no idea how to do huffman tree nodes. Is there any instruction?
 - Besides, there is a problem in chapt2 Arrays and Linked Lists: 21. swap nodes
 

@@ -1,14 +1,3 @@
-
-
-# D	2	000
-# B	3	001
-# E	6	01
-# A	7	10
-# C	7	11
-
-# A  A  A  A  A  A  A  B   B   B   C  C  C  C  C  C  C  D   D   E  E  E  E  E  E
-# 10 10 10 10 10 10 10 001 001 001 11 11 11 11 11 11 11 000 000 01 01 01 01 01 01
-
 import sys
 '''
 The building huffman tree node code below is a reference to this website:
@@ -52,7 +41,7 @@ def EncodeNodes(node, encode_dict, val=''):
     # then traverse inside it
     # if(node.left):
     EncodeNodes(node.left, encode_dict, newVal)
-# if(node.right):
+    # if(node.right):
     EncodeNodes(node.right, encode_dict, newVal)
  
     # if node is edge node then
@@ -185,19 +174,6 @@ if __name__ == "__main__":
     # Example
     a_great_sentence = "The bird is the word"
     whole_package(a_great_sentence, "Example")
-
-    # print ("The size of the data is: {}\n".format(sys.getsizeof(a_great_sentence)))
-    # print ("The content of the data is: {}\n".format(a_great_sentence))
-
-    # encoded_data, tree = huffman_encoding(a_great_sentence)
-
-    # print ("The size of the encoded data is: {}\n".format(sys.getsizeof(int(encoded_data, base=2))))
-    # print ("The content of the encoded data is: {}\n".format(encoded_data))
-
-    # decoded_data = huffman_decoding(encoded_data, tree)
-
-    # print ("The size of the decoded data is: {}\n".format(sys.getsizeof(decoded_data)))
-    # print ("The content of the encoded data is: {}\n".format(decoded_data))
 
 # # Add your own test cases: include at least three test cases
 # # and two of them must include edge cases, such as null, empty or very large values

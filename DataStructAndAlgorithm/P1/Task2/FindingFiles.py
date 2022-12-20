@@ -34,7 +34,7 @@ def _find_files(suffix, path, output):
         path_i = path+"/"+i
 
         if not os.path.isfile(path_i):
-            output = _find_files(suffix, path_i, output)
+            _find_files(suffix, path_i, output)
 
         if path_i.endswith(suffix):
             output.append(path_i)
@@ -43,13 +43,13 @@ def _find_files(suffix, path, output):
 
 # Add your own test cases: include at least three test cases
 # and two of them must include edge cases, such as null, empty or very large values
-
+root_path = "./DataStructAndAlgorithm/P1/Task2"
 # Test Case 1
-output = find_files(".c", "./Task2")
+output = find_files(".c", root_path)
 print(output)
 # Test Case 2
-output = find_files(".h", "./Task2")
+output = find_files(".h", root_path)
 print(output)
 # Test Case 3
-output = find_files("", "./Task2")
+output = find_files("", root_path)
 print(output)
