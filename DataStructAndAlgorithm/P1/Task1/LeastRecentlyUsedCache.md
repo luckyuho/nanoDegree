@@ -22,18 +22,15 @@ The time and space complexity for this program is O(1) because the length of our
 # # Test Case 1
 # our_cache.set(6, 7)
 # our_cache.print_cache()
-[1, 2, 7, 4, 5]
-{1: [0, 1670763804.6052868], 2: [1, 1670763804.605301], 4: [3, 1670763804.605286], 5: [4, 1670763804.6053052], 6: [2, 1670763804.60531]}
+OrderedDict([(6, 7), (5, 5), (2, 2), (1, 1), (4, 4)])
 # # Test Case 2
 # our_cache.set(8, 7)
 # our_cache.print_cache()
-[1, 2, 7, 7, 5]
-{1: [0, 1670763804.6052868], 2: [1, 1670763804.605301], 5: [4, 1670763804.6053052], 6: [2, 1670763804.60531], 8: [3, 1670763804.605324]}
+OrderedDict([(8, 7), (6, 7), (5, 5), (2, 2), (1, 1)])
 # # Test Case 3
 # our_cache.set('r', 'A')
 # our_cache.print_cache()
-['A', 2, 7, 7, 5]
-{2: [1, 1670763804.605301], 5: [4, 1670763804.6053052], 6: [2, 1670763804.60531], 8: [3, 1670763804.605324], 'r': [0, 1670763804.605333]}
+OrderedDict([('r', 'A'), (8, 7), (6, 7), (5, 5), (2, 2)])
 ```
 ### Question
 1. In fact, in your reviews, you mention you use doubly link list, I have no idea what is its benefit, is there any better way to deal with this problem?

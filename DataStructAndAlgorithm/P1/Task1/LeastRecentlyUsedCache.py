@@ -1,64 +1,33 @@
-import time
+# import time
+import collections
 
 class LRU_Cache(object):
 
     def __init__(self, capacity):
         # Initialize class variables
-        self.cache = [None for _ in range(capacity)] # value
-        self.dict_value_pos = dict() # {key: [pos, time]}
+        self.order_dict = collections.OrderedDict()
+        self.max_len = capacity
 
     def get(self, key):
-        # Retrieve item from provided key. Return -1 if nonexistent. 
-        if key in self.dict_value_pos:
-            pos = self.dict_value_pos[key][0]
-            value = self.cache[pos]
-            self.dict_value_pos[key][1] = time.time()
-
-        else:
-            value =  -1
+        # Retrieve item from provided key. Return -1 if nonexistent.
+        value = -1
+        if key in self.order_dict:
+            self.order_dict.move_to_end(key, last=False)
+            value = self.order_dict[key]
         
         print(value)
 
     def set(self, key, value):
-        # Set the value if the key is not present in the cache. If the cache is at capacity remove the oldest item. 
-        now = time.time()
-        if self.cache[-1] != None:
-            pos = 0
-            max_time = 0
-            del_key = None
+        # Set the value if the key is not present in the cache. If the cache is at capacity remove the oldest item.
+        self.order_dict[key] = value
+        self.order_dict.move_to_end(key, last=False)
 
-            if key in self.dict_value_pos:
-                pos = self.dict_value_pos[key][0]
-                self.dict_value_pos[key] = [pos, now]
-                self.cache[pos] = value
-                return 
-
-            for _key in self.dict_value_pos:
-                _pos, _time = self.dict_value_pos[_key]
-
-                if max_time < now - _time:
-                    max_time = now - _time
-                    pos = _pos
-                    del_key = _key
-
-            del self.dict_value_pos[del_key]
-            self.dict_value_pos[key] = [pos, now]
-            self.cache[pos] = value
-            return 
-
-        else:
-            for i in range(len(self.cache)):
-                if self.cache[i] == None:
-                    self.dict_value_pos[key] = [i, now]
-                    self.cache[i] = value
-                    return
-
-    def get_cache(self):
-        return self.cache
+        if len(self.order_dict) > self.max_len:
+            last_key = list(self.order_dict)[-1]
+            del(self.order_dict[last_key])
 
     def print_cache(self):
-        print(self.cache)
-        print(self.dict_value_pos)
+        print(self.order_dict)
 
 
 our_cache = LRU_Cache(5)
