@@ -66,4 +66,4 @@ def f(prefix):
     else:
         print('')
 
-interact(f,prefix='f');
+interact(f,prefix='');

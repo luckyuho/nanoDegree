@@ -4,4 +4,4 @@
 Simulation of router of http request. Building trie node.
 
 ### Time and Space Complexity Analysis
-The time space complexity of the worst case for this program is O(n). The space complexity of the worst case is O(n).
+The worst time space complexity for this program is O(n). The worst space complexity is O(n).
