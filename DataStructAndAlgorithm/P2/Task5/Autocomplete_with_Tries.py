@@ -3,19 +3,23 @@ class TrieNode:
     def __init__(self):
         ## Initialize this node in the Trie
         self.trieNode = dict()
-        
     
     def insert(self, char):
         # Add a child node in this Trie
         self.trieNode[char] = TrieNode()
-
-    # I don't know how to see the expected output       
+      
     def suffixes(self, suffix = ''):
         ## Recursive function that collects the suffix for 
         ## all complete words below this point
-        return 'r'
-        # return ['r', 'b']
-
+        suffix_list = []
+        for values in self.trieNode:
+            if self.trieNode[values].trieNode:
+                suffix_list.extend(self.trieNode[values].suffixes(suffix + values))
+            else:
+                suffix_list.append(suffix + values)
+                
+        return suffix_list
+                    
         
 ## The Trie itself containing the root node and insert/find functions
 class Trie:
@@ -37,11 +41,7 @@ class Trie:
         ## Find the Trie node that represents this prefix
         if prefix in self.trie.trieNode:
             node = self.trie.trieNode[prefix]
-            return node.trieNode
-
-    def print_first(self):
-        for word_start in self.trie.trieNode:
-            print(word_start)
+            return node
 
 
 MyTrie = Trie()
@@ -60,15 +60,10 @@ def f(prefix):
     if prefix != '':
         prefixNode = MyTrie.find(prefix)
         if prefixNode:
-            # TODO
-            # I don't know how to see the expected output
-            # so I just return 'r' or return ['r', 'b'] to see what will happen
-            # but nothing change at all
             print('\n'.join(prefixNode.suffixes())) 
         else:
             print(prefix + " not found")
     else:
         print('')
-# TODO
-# how to see remaining info after prefix='a' ??
-interact(f,prefix='');
+
+interact(f,prefix='f');
