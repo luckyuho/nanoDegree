@@ -21,16 +21,17 @@ def sqrt_target_big(num, target):
     return sqrt_target_big(num // 2, target)
 
 def sqrt_target_small(num, target):
-    if num * num == target:
+    if num * num <= target:
         return num
     if num * num > target:
-        return num - 1
-
-    return sqrt_target_small(num + (num // 2), target)
-
+        return sqrt_target_small(num - 1, target)
 
 print ("Pass" if  (3 == sqrt(9)) else "Fail")
 print ("Pass" if  (0 == sqrt(0)) else "Fail")
 print ("Pass" if  (4 == sqrt(16)) else "Fail")
 print ("Pass" if  (1 == sqrt(1)) else "Fail")
 print ("Pass" if  (5 == sqrt(27)) else "Fail")
+
+# Test Edge Cases
+print ("Pass" if  (1 == sqrt(1)) else "Fail")
+print ("Pass" if  (100 == sqrt(10002)) else "Fail")

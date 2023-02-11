@@ -60,3 +60,7 @@ def test_function(test_case):
 test_function([[1, 2, 3, 4, 5], [542, 31]])
 test_case = [[4, 6, 2, 5, 9, 8], [964, 852]]
 test_function(test_case)
+
+# Test Edge Cases
+test_function([[], []])
+test_function([[1,1,1,0,0,0], [110,100]])

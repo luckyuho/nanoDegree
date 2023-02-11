@@ -3,6 +3,7 @@ class TrieNode:
     def __init__(self):
         ## Initialize this node in the Trie
         self.trieNode = dict()
+        self.is_word = False
     
     def insert(self, char):
         # Add a child node in this Trie
@@ -14,6 +15,8 @@ class TrieNode:
         suffix_list = []
         for values in self.trieNode:
             if self.trieNode[values].trieNode:
+                if self.trieNode[values].is_word:
+                    suffix_list.append(suffix + values)
                 suffix_list.extend(self.trieNode[values].suffixes(suffix + values))
             else:
                 suffix_list.append(suffix + values)
@@ -28,7 +31,6 @@ class Trie:
         self.trie = TrieNode()
 
     def insert(self, word):
-        
         ## Add a word to the Trie
         trie = self.trie
         for char in word:
@@ -36,6 +38,7 @@ class Trie:
                 trie.insert(char)
 
             trie = trie.trieNode[char]
+        trie.is_word = True
 
     def find(self, prefix):
         ## Find the Trie node that represents this prefix
@@ -66,4 +69,4 @@ def f(prefix):
     else:
         print('')
 
-interact(f,prefix='');
+interact(f,prefix='f');
