@@ -10,7 +10,7 @@
  - Map
  - Trie Node
  - Sorting Algorithm
- - Dynamic Programing
+ - Dynamic Programming
 
 ### Certificate
 <img src="https://github.com/luckyuho/nanoDegree/blob/main/img/DataStructuresAndAlgorithms.png"  width="600" height="500">
